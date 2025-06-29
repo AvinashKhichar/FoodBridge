@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_nav"
+    app:startDestination="@id/donateFragment3">
+
+    <fragment
+        android:id="@+id/homeFragment3"
+        android:name="com.example.foodbridge.fragments.donation.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment3_to_findFragment32"
+            app:destination="@id/findFragment3" />
+        <action
+            android:id="@+id/action_homeFragment3_to_donateFragment32"
+            app:destination="@id/donateFragment3" />
+        <action
+            android:id="@+id/action_homeFragment3_to_profileFragment32"
+            app:destination="@id/profileFragment3" />
+        <action
+            android:id="@+id/action_homeFragment3_to_foodFragment"
+            app:destination="@id/foodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findFragment3"
+        android:name="com.example.foodbridge.fragments.donation.FindFragment"
+        android:label="FindFragment"
+        tools:layout="@layout/fragment_find">
+        <action
+            android:id="@+id/action_findFragment3_to_homeFragment32"
+            app:destination="@id/homeFragment3" />
+        <action
+            android:id="@+id/action_findFragment3_to_donateFragment32"
+            app:destination="@id/donateFragment3" />
+        <action
+            android:id="@+id/action_findFragment3_to_profileFragment32"
+            app:destination="@id/profileFragment3" />
+        <action
+            android:id="@+id/action_findFragment3_to_foodFragment"
+            app:destination="@id/foodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment3"
+        android:name="com.example.foodbridge.fragments.donation.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment3_to_donateFragment32"
+            app:destination="@id/donateFragment3" />
+        <action
+            android:id="@+id/action_profileFragment3_to_findFragment32"
+            app:destination="@id/findFragment3" />
+        <action
+            android:id="@+id/action_profileFragment3_to_homeFragment33"
+            app:destination="@id/homeFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/donateFragment3"
+        android:name="com.example.foodbridge.fragments.donation.DonateFragment"
+        android:label="DonateFragment"
+        tools:layout="@layout/fragment_donate">
+        <action
+            android:id="@+id/action_donateFragment3_to_profileFragment32"
+            app:destination="@id/profileFragment3" />
+        <action
+            android:id="@+id/action_donateFragment3_to_findFragment32"
+            app:destination="@id/findFragment3" />
+        <action
+            android:id="@+id/action_donateFragment3_to_homeFragment32"
+            app:destination="@id/homeFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.example.foodbridge.fragments.donation.FoodFragment"
+        android:label="FoodFragment"
+        tools:layout="@layout/fragment_food"/>
+
+</navigation>

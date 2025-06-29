@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@drawable/bg">
+
+        <ImageButton
+            android:id="@+id/Arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/arrow"
+            android:rotation="180"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_select_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/Arrow"
+            android:text="1. Select product images"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Arrow" />
+
+        <Button
+            android:id="@+id/buttonImagesPicker"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Pick image"
+            style="@style/blueButtonStyle"
+            app:layout_constraintStart_toStartOf="@id/tv_select_image"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_image" />
+
+        <TextView
+            android:id="@+id/tvSelectedImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@id/buttonImagesPicker"
+            app:layout_constraintStart_toEndOf="@id/buttonImagesPicker"
+            app:layout_constraintTop_toTopOf="@id/buttonImagesPicker" />
+
+
+        <TextView
+            android:id="@+id/tv_select_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="2. Select product location"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonImagesPicker" />
+
+        <TextView
+            android:id="@+id/tvLocationInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Search for a location or tap on the map to select it"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_location" />
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:queryHint="Search for a location"
+            android:iconifiedByDefault="false"
+            android:background="@drawable/search_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLocationInstructions" />
+
+        <ProgressBar
+            android:id="@+id/locationProgressBar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="gone"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@id/searchView"
+            app:layout_constraintTop_toTopOf="@id/searchView"
+            app:layout_constraintBottom_toBottomOf="@id/searchView" />
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchView" />
+
+        <TextView
+            android:id="@+id/tvSelectedLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="No location selected"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mapView" />
+
+        <TextView
+            android:id="@+id/tvAddressInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSelectedLocation" />
+
+        <TextView
+            android:id="@+id/tv_product_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="3. Enter product information"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddressInfo" />
+
+        <EditText
+            android:id="@+id/edName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Name"
+            app:layout_constraintStart_toStartOf="@id/tv_product_info"
+            app:layout_constraintTop_toBottomOf="@id/tv_product_info" />
+
+        <EditText
+            android:id="@+id/edCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Food category"
+            app:layout_constraintStart_toStartOf="@id/edName"
+            app:layout_constraintTop_toBottomOf="@id/edName" />
+
+        <EditText
+            android:id="@+id/edDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Use Up-To (DD/MM/YY)"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toStartOf="@id/edCategory"
+            app:layout_constraintTop_toBottomOf="@id/edCategory" />
+
+
+        <EditText
+            android:id="@+id/edDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Food description"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            app:layout_constraintStart_toStartOf="@id/edDate"
+            app:layout_constraintTop_toBottomOf="@id/edDate" />
+
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            style="@style/blueButtonStyle"
+            android:text="Save Item"
+            android:id="@+id/saveProduct"
+            app:layout_constraintTop_toBottomOf="@id/edDescription"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
